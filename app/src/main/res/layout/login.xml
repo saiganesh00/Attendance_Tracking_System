@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="#f5f5f5"
+    tools:context=".Auth.LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/login_main"
+    <ImageView
+        android:id="@+id/semi_circle_image"
+        android:layout_width="614dp"
+        android:layout_height="482dp"
+        android:rotation="-90"
+        android:rotationX="-4"
+        android:rotationY="2"
+        android:src="@drawable/semicircle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-250dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/login_illustration"
+        android:layout_width="526dp"
+        android:layout_height="347dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f5f5f5"
-        tools:context=".Auth.LoginActivity">
-
-        <ImageView
-            android:id="@+id/semi_circle_image"
-            android:layout_width="614dp"
-            android:layout_height="482dp"
-            android:rotation="-90"
-            android:rotationX="-4"
-            android:rotationY="2"
-            android:src="@drawable/semicircle"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="-250dp"
-            android:layout_centerHorizontal="true"
-            android:scaleType="centerCrop"/>
-
-        <ImageView
-            android:id="@+id/login_illustration"
-            android:layout_width="526dp"
-            android:layout_height="347dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/login_illustration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/form_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp"
-            app:layout_constraintTop_toBottomOf="@id/login_illustration"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/login_title"
@@ -58,7 +58,10 @@
                 android:text="Login"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/email_username_label"
@@ -66,7 +69,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Email or Username"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_title" />
 
             <EditText
                 android:id="@+id/email_username"
@@ -79,7 +84,8 @@
                 android:padding="12dp"
                 android:textColor="#000000"
                 android:textColorHint="#9B9898"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/email_username_label" />
 
             <TextView
                 android:id="@+id/password_label"
@@ -87,7 +93,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Password"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_username" />
 
             <EditText
                 android:id="@+id/password"
@@ -101,8 +109,7 @@
                 android:textColor="#000000"
                 android:textColorHint="#9B9898"
                 android:textSize="14sp"
-                android:drawableEnd="@drawable/ic_visibility"
-                android:drawablePadding="12dp" />
+                app:layout_constraintTop_toBottomOf="@id/password_label" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/login_button"
@@ -116,7 +123,8 @@
                 app:cornerRadius="8dp"
                 app:backgroundTint="#5009b5"
                 app:elevation="0dp"
-                style="@style/Widget.MaterialComponents.Button" />
+                style="@style/Widget.MaterialComponents.Button"
+                app:layout_constraintTop_toBottomOf="@id/password" />
 
             <TextView
                 android:id="@+id/divider"
@@ -127,7 +135,10 @@
                 android:text="or"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_button" />
 
             <TextView
                 android:id="@+id/signup_link"
@@ -138,10 +149,11 @@
                 android:text="New user? Sign Up"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

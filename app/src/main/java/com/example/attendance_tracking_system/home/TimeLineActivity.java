@@ -2,52 +2,66 @@ package com.example.attendance_tracking_system.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.text.format.Time;
 import android.widget.Button;
-=======
->>>>>>> d1865b13ada7602ef98462d088e3e2e1972f98e1
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.example.attendance_tracking_system.R;
 import com.example.attendance_tracking_system.programs.ProgramsActivity;
 
 public class TimeLineActivity extends AppCompatActivity {
+
     private TextView follwingTxt, myActivitiesTxt, featuredTxt;
-<<<<<<< HEAD
     private Button joinButton, createLeagueButton;
 
     private LinearLayout programsBtn;
     private Intent intent;
-=======
-    private LinearLayout menuButton;
-
->>>>>>> d1865b13ada7602ef98462d088e3e2e1972f98e1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_time_line);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.timeline), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        follwingTxt = findViewById(R.id.timelineFollowingTextView);
+        follwingTxt.setOnClickListener(v -> {
+            follwingTxt.setBackgroundColor(getColor(R.color.white));
+            follwingTxt.setTextColor(getColor(R.color.black));
+            myActivitiesTxt.setBackgroundColor(getColor(R.color.primary_color));
+            myActivitiesTxt.setTextColor(getColor(R.color.white));
+            featuredTxt.setBackgroundColor(getColor(R.color.primary_color));
+            featuredTxt.setTextColor(getColor(R.color.white));
+        });
 
-        // Initialize views
-        initializeViews();
-        setupClickListeners();
-    }
+        myActivitiesTxt = findViewById(R.id.timelineMyActivitiesTextView);
+        myActivitiesTxt.setOnClickListener(v -> {
+            follwingTxt.setBackgroundColor(getColor(R.color.primary_color));
+            follwingTxt.setTextColor(getColor(R.color.white));
+            myActivitiesTxt.setBackgroundColor(getColor(R.color.white));
+            myActivitiesTxt.setTextColor(getColor(R.color.black));
+            featuredTxt.setBackgroundColor(getColor(R.color.primary_color));
+            featuredTxt.setTextColor(getColor(R.color.white));
+        });
 
-    private void initializeViews() {
-        try {
-            follwingTxt = findViewById(R.id.timelineFollowingTextView);
-            myActivitiesTxt = findViewById(R.id.timelineMyActivitiesTextView);
-            featuredTxt = findViewById(R.id.timelineFeaturedTextView);
-            menuButton = findViewById(R.id.menuButtonLinearLayout);
-        } catch (Exception e) {
-            Toast.makeText(this, "Error initializing views", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
-    }
+        featuredTxt = findViewById(R.id.timelineFeaturedTextView);
+        featuredTxt.setOnClickListener(v -> {
+            follwingTxt.setBackgroundColor(getColor(R.color.primary_color));
+            follwingTxt.setTextColor(getColor(R.color.white));
+            myActivitiesTxt.setBackgroundColor(getColor(R.color.primary_color));
+            myActivitiesTxt.setTextColor(getColor(R.color.white));
+            featuredTxt.setBackgroundColor(getColor(R.color.white));
+            featuredTxt.setTextColor(getColor(R.color.black));
 
-<<<<<<< HEAD
         });
 
         joinButton = findViewById(R.id.joinWithInviteButton);
@@ -71,59 +85,5 @@ public class TimeLineActivity extends AppCompatActivity {
             finish();
         });
 
-=======
-    private void setupClickListeners() {
-        if (menuButton != null) {
-            menuButton.setOnClickListener(v -> {
-                Intent intent = new Intent(TimeLineActivity.this, MenuActivity.class);
-                startActivity(intent);
-            });
-        }
-
-        if (follwingTxt != null) {
-            follwingTxt.setOnClickListener(v -> {
-                follwingTxt.setBackgroundColor(getColor(R.color.white));
-                follwingTxt.setTextColor(getColor(R.color.black));
-                if (myActivitiesTxt != null) {
-                    myActivitiesTxt.setBackgroundColor(getColor(R.color.primary_color));
-                    myActivitiesTxt.setTextColor(getColor(R.color.white));
-                }
-                if (featuredTxt != null) {
-                    featuredTxt.setBackgroundColor(getColor(R.color.primary_color));
-                    featuredTxt.setTextColor(getColor(R.color.white));
-                }
-            });
-        }
-
-        if (myActivitiesTxt != null) {
-            myActivitiesTxt.setOnClickListener(v -> {
-                if (follwingTxt != null) {
-                    follwingTxt.setBackgroundColor(getColor(R.color.primary_color));
-                    follwingTxt.setTextColor(getColor(R.color.white));
-                }
-                myActivitiesTxt.setBackgroundColor(getColor(R.color.white));
-                myActivitiesTxt.setTextColor(getColor(R.color.black));
-                if (featuredTxt != null) {
-                    featuredTxt.setBackgroundColor(getColor(R.color.primary_color));
-                    featuredTxt.setTextColor(getColor(R.color.white));
-                }
-            });
-        }
-
-        if (featuredTxt != null) {
-            featuredTxt.setOnClickListener(v -> {
-                if (follwingTxt != null) {
-                    follwingTxt.setBackgroundColor(getColor(R.color.primary_color));
-                    follwingTxt.setTextColor(getColor(R.color.white));
-                }
-                if (myActivitiesTxt != null) {
-                    myActivitiesTxt.setBackgroundColor(getColor(R.color.primary_color));
-                    myActivitiesTxt.setTextColor(getColor(R.color.white));
-                }
-                featuredTxt.setBackgroundColor(getColor(R.color.white));
-                featuredTxt.setTextColor(getColor(R.color.black));
-            });
-        }
->>>>>>> d1865b13ada7602ef98462d088e3e2e1972f98e1
     }
 }

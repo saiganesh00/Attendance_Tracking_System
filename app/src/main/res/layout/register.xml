@@ -164,9 +164,7 @@
                     android:padding="12dp"
                     android:textColor="#000000"
                     android:textColorHint="#9B9898"
-                    android:textSize="14sp"
-                    android:drawableEnd="@drawable/ic_visibility"
-                    android:drawablePadding="12dp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/confirm_password_label"
@@ -187,9 +185,7 @@
                     android:padding="12dp"
                     android:textColor="#000000"
                     android:textColorHint="#9B9898"
-                    android:textSize="14sp"
-                    android:drawableEnd="@drawable/ic_visibility"
-                    android:drawablePadding="12dp" />
+                    android:textSize="14sp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/signup_button"
