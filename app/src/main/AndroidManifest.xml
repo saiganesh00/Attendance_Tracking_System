@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.attendance_tracking_system">
 
+<<<<<<< HEAD
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -10,6 +11,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
+=======
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+>>>>>>> d1865b13ada7602ef98462d088e3e2e1972f98e1
 
     <application
         android:allowBackup="true"
@@ -19,8 +24,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Attendance_Tracking_System"
         tools:targetApi="31">
+<<<<<<< HEAD
 
         <!-- Override screen orientation for CaptureActivity -->
         <activity
@@ -38,6 +45,20 @@
 
         <activity
             android:name=".home.TimeLineActivity"
+=======
+        
+        <activity
+            android:name=".home.TimeLineActivity"
+            android:exported="false" >
+        </activity>
+
+        <activity
+            android:name=".home.MenuActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+>>>>>>> d1865b13ada7602ef98462d088e3e2e1972f98e1
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
