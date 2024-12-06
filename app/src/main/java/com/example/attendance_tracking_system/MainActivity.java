@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView follwingTxt, myActivitiesTxt, featuredTxt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

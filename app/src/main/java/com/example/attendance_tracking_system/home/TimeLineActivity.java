@@ -1,6 +1,10 @@
 package com.example.attendance_tracking_system.home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.Time;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -10,10 +14,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.attendance_tracking_system.R;
+import com.example.attendance_tracking_system.programs.ProgramsActivity;
 
 public class TimeLineActivity extends AppCompatActivity {
 
     private TextView follwingTxt, myActivitiesTxt, featuredTxt;
+    private Button joinButton, createLeagueButton;
+
+    private LinearLayout programsBtn;
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,5 +63,27 @@ public class TimeLineActivity extends AppCompatActivity {
             featuredTxt.setTextColor(getColor(R.color.black));
 
         });
+
+        joinButton = findViewById(R.id.joinWithInviteButton);
+        joinButton.setOnClickListener(v -> {
+            intent = new Intent(TimeLineActivity.this, ProgramsActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        createLeagueButton = findViewById(R.id.createLeagueButton);
+        createLeagueButton.setOnClickListener(v -> {
+            intent = new Intent(TimeLineActivity.this, ProgramsActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        programsBtn = findViewById(R.id.programsButtonLinearLayout);
+        programsBtn.setOnClickListener(v -> {
+            intent = new Intent(TimeLineActivity.this, ProgramsActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 }
