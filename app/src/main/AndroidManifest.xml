@@ -33,7 +33,8 @@
             android:name=".Auth.RegisterActivity"
             android:exported="false" />
 
-            
+        <activity android:name=".Auth.LoginActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
