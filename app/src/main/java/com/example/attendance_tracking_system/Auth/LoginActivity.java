@@ -10,13 +10,8 @@ import android.widget.Toast;
 
 import com.example.attendance_tracking_system.R;
 
-import com.example.attendance_tracking_system.home.;
-import com.example.attendance_tracking_system.network.RetrofitClient;
-import com.example.attendance_tracking_system.network.models.AuthResponse;
-import com.example.attendance_tracking_system.network.models.LoginRequest;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.example.attendance_tracking_system.home.TimeLineActivity;
+
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -42,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
     private void loginUser() {
         if (validateInput()) {
             String emailOrUsername = emailUsernameEditText.getText().toString().trim();
