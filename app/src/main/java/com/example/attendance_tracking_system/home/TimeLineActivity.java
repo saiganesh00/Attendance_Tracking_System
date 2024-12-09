@@ -7,10 +7,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.attendance_tracking_system.R;
+import com.example.attendance_tracking_system.programs.ProgramsActivity;
 
 public class TimeLineActivity extends AppCompatActivity {
     private TextView follwingTxt, myActivitiesTxt, featuredTxt;
     private LinearLayout menuButton;
+    private LinearLayout programsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class TimeLineActivity extends AppCompatActivity {
             myActivitiesTxt = findViewById(R.id.timelineMyActivitiesTextView);
             featuredTxt = findViewById(R.id.timelineFeaturedTextView);
             menuButton = findViewById(R.id.menuButtonLinearLayout);
+            programsButton = findViewById(R.id.programsButtonLinearLayout);
         } catch (Exception e) {
             Toast.makeText(this, "Error initializing views", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
@@ -38,6 +41,14 @@ public class TimeLineActivity extends AppCompatActivity {
             menuButton.setOnClickListener(v -> {
                 Intent intent = new Intent(TimeLineActivity.this, MenuActivity.class);
                 startActivity(intent);
+            });
+        }
+
+        if (programsButton != null) {
+            programsButton.setOnClickListener(v -> {
+                Intent intent = new Intent(TimeLineActivity.this, ProgramsActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 

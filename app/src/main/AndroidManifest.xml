@@ -28,7 +28,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,8 +40,17 @@
             android:name=".Auth.RegisterActivity"
             android:exported="false" />
 
-        <activity android:name=".Auth.LoginActivity"
+        <activity android:name=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".programs.ProgramsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".attendance.MainAttendanceActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
