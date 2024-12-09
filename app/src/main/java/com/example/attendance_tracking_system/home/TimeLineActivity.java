@@ -17,7 +17,6 @@ public class TimeLineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_line);
 
-        // Initialize views
         initializeViews();
         setupClickListeners();
     }

@@ -2,7 +2,9 @@ package com.example.attendance_tracking_system.network.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AuthResponse {
+import java.io.Serializable;
+
+public class AuthResponse implements Serializable {
     @SerializedName("message")
     private String message;
 
